@@ -21,9 +21,10 @@ for i in range(10):
     tail=int((len(mark)/10)*(i+1))
 
 
-    x_train = np.array(data[0:head]+data[tail:])
-    y_train = np.array(mark[0:head]+mark[tail:])
-
+    #x_train = np.array(data[0:head]+data[tail:])
+    #y_train = np.array(mark[0:head]+mark[tail:])
+    x_train = np.vstack((data[0:head], data[tail:]))
+    y_train = np.vstack((mark[0:head], mark[tail:]))
     x_test = np.array(data[head:tail])
     y_test = np.array(mark[head:tail])
     try:
